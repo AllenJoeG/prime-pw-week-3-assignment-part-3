@@ -33,20 +33,16 @@ supplyChanges.push(25);
 //    - if the value is 0, log 'No Change.'
 //    - if the value is negative, format the log as 'Removed x parts.'
 console.log('6. Showing supplyChanges...');
-for (let indeX in supplyChanges){
-//FOR-IN loop 'indeX' is essentially indexing a range based on length of array.
-  inventory = supplyChanges[indeX];
-//set a shorthand var for storing the value of each index of the array.
-  if (inventory > 0){
-    console.log('Added', inventory, 'parts.');
-  } else if (inventory === 0){
+for (i = 0; i < supplyChanges.length; i++){
+  let invAmt = supplyChanges[i];
+  if (invAmt > 0){
+    console.log('Added', invAmt, 'parts.');
+  } else if (invAmt === 0){
     console.log('No Change.');
   } else {
-    console.log('Removed', inventory, 'parts.');
+    console.log('Removed', invAmt, 'parts.');
   }
 }
-//Removed a negative amount?! But how does that add up?! /s
-
 
 // STRETCH GOALS
 console.log('---  Stretch Goals  ---');
@@ -62,6 +58,21 @@ for (let valuX of supplyChanges){
     console.log('Removed', valuX, 'parts.');
   }
 }
+//Oops, accidentally wrote this for in loop for #6, including here for posterity
+console.log('7(a). Showing supplyChanges with "for in" loop');
+for (let indeX in supplyChanges){
+//FOR-IN loop 'indeX' is essentially indexing a range based on length of array.
+  inventory = supplyChanges[indeX];
+//set a shorthand var for storing the value of each index of the array.
+  if (inventory > 0){
+    console.log('Added', inventory, 'parts.');
+  } else if (inventory === 0){
+    console.log('No Change.');
+  } else {
+    console.log('Removed', inventory, 'parts.');
+  }
+}
+
 
 // 8. Rewrite the `for` loop from #6 as a `while` loop.
 console.log('8. Showing supplyChanges with "while" loop');
