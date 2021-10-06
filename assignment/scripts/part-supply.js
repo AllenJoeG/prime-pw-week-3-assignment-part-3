@@ -33,32 +33,55 @@ supplyChanges.push(25);
 //    - if the value is 0, log 'No Change.'
 //    - if the value is negative, format the log as 'Removed x parts.'
 console.log('6. Showing supplyChanges...');
-for (let x in supplyChanges.length){
-  caseExample = Num(supplyChanges[x]);
-  console.log(supplyChanges.length);
-  switch(caseExample){
-    case (caseExample > 0):
-      console.log('Added', supplyChanges[x], 'parts.');
-      break;
-    case (caseExample === 0):
-      console.log('No Change.');
-      break;
-    case (caseExample < 0):
-      console.log('Removed', supplyChanges[x], 'parts.');
-      break;
+for (let indeX in supplyChanges){
+//FOR-IN loop 'indeX' is essentially indexing within a range, the length of array.
+  inventory = supplyChanges[indeX];
+
+  if (inventory > 0){
+    console.log('Added', inventory, 'parts.');
+  } else if (inventory === 0){
+    console.log('No Change.');
+  } else {
+    console.log('Removed', inventory, 'parts.');
   }
 }
+//Removed a negative amount?! But how does that add up?! /s
 
 
 // STRETCH GOALS
 console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop.
 console.log('7. Showing supplyChanges with "for of" loop');
+for (let valuX of supplyChanges){
+//FOR-OF loop 'x' becomes the values of each position in the array.
+  if (valuX > 0){
+    console.log('Added', valuX, 'parts.');
+  } else if (valuX === 0){
+    console.log('No Change.');
+  } else {
+    console.log('Removed', valuX, 'parts.');
+  }
+}
 
 // 8. Rewrite the `for` loop from #6 as a `while` loop.
 console.log('8. Showing supplyChanges with "while" loop');
-
+let iCount = 0;
+while (iCount < supplyChanges.length){
+  if (supplyChanges[iCount] > 0){
+    console.log('Added', supplyChanges[iCount], 'parts.');
+  } else if (supplyChanges[iCount] === 0){
+    console.log('No Change.');
+  } else {
+    console.log('Removed', supplyChanges[iCount], 'parts.');
+  }
+  iCount++;
+}
 
 // 9. Write a loop to determine the total number of parts available by
 //    adding up all the numbers in the 'supplyChanges' array.
 console.log('9. Total supplies available is:');
+let totalParts = 0;
+for (let zzz of supplyChanges){
+  totalParts += zzz;
+}
+console.log(totalParts);
