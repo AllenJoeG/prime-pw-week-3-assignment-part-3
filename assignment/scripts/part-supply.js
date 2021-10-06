@@ -34,9 +34,9 @@ supplyChanges.push(25);
 //    - if the value is negative, format the log as 'Removed x parts.'
 console.log('6. Showing supplyChanges...');
 for (let indeX in supplyChanges){
-//FOR-IN loop 'indeX' is essentially indexing within a range, the length of array.
+//FOR-IN loop 'indeX' is essentially indexing a range based on length of array.
   inventory = supplyChanges[indeX];
-
+//set a shorthand var for storing the value of each index of the array.
   if (inventory > 0){
     console.log('Added', inventory, 'parts.');
   } else if (inventory === 0){
